@@ -8,9 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    @StateObject private var taskListViewModel = TaskListViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            HStack {
+                TextField("Enter Task Name", text: $taskListViewModel.title)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Button("Save"){
+                    taskListViewModel.save()
+                }
+            }
+            
+            List(0...20, id: \.self){
+                index in
+                Text("\(index)")
+            }
+            
+            
+            Spacer()
+        }.padding()
     }
 }
 

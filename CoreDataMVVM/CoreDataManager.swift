@@ -14,7 +14,19 @@ class CoreDataManager {
     let persistentContainer: NSPersistentContainer
     
     static let shared = CoreDataManager() //singleton
+    var viewContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
     
+    func save() {
+        do {
+            try viewContext.save()
+        }catch{
+            viewContext.rollback()
+            print(error.localizedDescription)
+        }
+        
+    }
     
     private init() { // private, not available outside this claass
         persistentContainer = NSPersistentContainer(name: "TodoAppModel")

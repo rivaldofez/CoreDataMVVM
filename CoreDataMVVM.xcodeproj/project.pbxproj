@@ -13,6 +13,7 @@
 		7E029BE628B13B760055C481 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E029BE528B13B760055C481 /* Preview Assets.xcassets */; };
 		7E029BED28B13BE40055C481 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E029BEC28B13BE40055C481 /* CoreDataManager.swift */; };
 		7E029BF028B13C5F0055C481 /* TodoAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E029BEE28B13C5F0055C481 /* TodoAppModel.xcdatamodeld */; };
+		7E029BF328B13D330055C481 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E029BF228B13D330055C481 /* TaskListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		7E029BE528B13B760055C481 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7E029BEC28B13BE40055C481 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7E029BEF28B13C5F0055C481 /* TodoAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoAppModel.xcdatamodel; sourceTree = "<group>"; };
+		7E029BF228B13D330055C481 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 		7E029BD228B13B750055C481 = {
 			isa = PBXGroup;
 			children = (
+				7E029BF128B13D1B0055C481 /* View Models */,
 				7E029BDD28B13B750055C481 /* CoreDataMVVM */,
 				7E029BDC28B13B750055C481 /* Products */,
 			);
@@ -71,6 +74,14 @@
 				7E029BE528B13B760055C481 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7E029BF128B13D1B0055C481 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E029BF228B13D330055C481 /* TaskListViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +156,7 @@
 			files = (
 				7E029BED28B13BE40055C481 /* CoreDataManager.swift in Sources */,
 				7E029BF028B13C5F0055C481 /* TodoAppModel.xcdatamodeld in Sources */,
+				7E029BF328B13D330055C481 /* TaskListViewModel.swift in Sources */,
 				7E029BE128B13B750055C481 /* ContentView.swift in Sources */,
 				7E029BDF28B13B750055C481 /* CoreDataMVVMApp.swift in Sources */,
 			);
