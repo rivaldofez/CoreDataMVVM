@@ -13,6 +13,14 @@ class TaskListViewModel: ObservableObject {
     @Published var tasks: [TaskViewModel] = []
     
     
+    func delete(_ task: TaskViewModel) {
+        let existingTask = CoreDataManager.shared.getTaskById(id: task.id)
+        if let existingTask = existingTask {
+            CoreDataManager.shared.deleteTask(task: existingTask)
+        }
+        
+    }
+    
     func getAllTask() {
        tasks = CoreDataManager.shared.getAllTask().map(TaskViewModel.init)
     }

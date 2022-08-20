@@ -12,6 +12,15 @@ struct ContentView: View {
     
     @StateObject private var taskListViewModel = TaskListViewModel()
     
+    func deleteTask(at offsets: IndexSet){
+        offsets.forEach{ index in
+            let task = taskListViewModel.tasks[index]
+            taskListViewModel.delete(task)
+        }
+        taskListViewModel.getAllTask()
+    }
+    
+    
     var body: some View {
         VStack {
             HStack {
@@ -31,6 +40,12 @@ struct ContentView: View {
 //                task in
 //                Text(task.title)
 //            }
+            
+            List {
+                ForEach(taskListViewModel.tasks, id: \.id) { task in
+                    Text(task.title)
+                }.onDelete(perform: deleteTask)
+            }
             
             
             Spacer()

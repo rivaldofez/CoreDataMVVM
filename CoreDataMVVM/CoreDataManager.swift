@@ -28,6 +28,20 @@ class CoreDataManager {
         }
     }
     
+    func deleteTask(task: Task) {
+        viewContext.delete(task)
+        save()
+    }
+    
+    func getTaskById(id: NSManagedObjectID) -> Task? {
+        do {
+            return try viewContext.existingObject(with: id) as? Task
+        } catch {
+            return nil
+        }
+        
+    }
+    
     func save() {
         do {
             try viewContext.save()
