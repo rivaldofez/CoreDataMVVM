@@ -18,18 +18,26 @@ struct ContentView: View {
                 TextField("Enter Task Name", text: $taskListViewModel.title)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("Save"){
-                    taskListViewModel.save()
+                    withAnimation{
+                        taskListViewModel.save()
+                        taskListViewModel.getAllTask()
+                    }
+                    
+                    
                 }
             }
             
-            List(0...20, id: \.self){
-                index in
-                Text("\(index)")
-            }
+//            List(taskListViewModel.tasks, id: \.id){
+//                task in
+//                Text(task.title)
+//            }
             
             
             Spacer()
         }.padding()
+            .onAppear{
+                taskListViewModel.getAllTask()
+            }
     }
 }
 

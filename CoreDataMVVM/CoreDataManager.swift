@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 
 //initializing core data
@@ -16,6 +17,15 @@ class CoreDataManager {
     static let shared = CoreDataManager() //singleton
     var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
+    }
+    
+    func getAllTask() -> [Task] {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        do {
+           return try viewContext.fetch(request)
+        }catch{
+            return []
+        }
     }
     
     func save() {
